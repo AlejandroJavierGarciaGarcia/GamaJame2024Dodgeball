@@ -53,7 +53,10 @@ public class ThrowingScript : MonoBehaviour
 
         if(Physics.Raycast(cam.position, cam.forward, out hit, 500f))
         {
-            forceDirection = (hit.point - attackPoint.position).normalized;
+            if (!hit.collider.CompareTag("ParedInvisible"))
+            {
+                forceDirection = (hit.point - attackPoint.position).normalized;
+            }
         }
 
         // add force
@@ -61,7 +64,6 @@ public class ThrowingScript : MonoBehaviour
 
         projectileRb.AddForce(forceToAdd, ForceMode.Impulse);
 
-        totalThrows--;
 
         // implement throwCooldown
         Invoke(nameof(ResetThrow), throwCooldown);
