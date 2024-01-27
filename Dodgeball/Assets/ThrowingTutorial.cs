@@ -40,6 +40,8 @@ public class ThrowingScript : MonoBehaviour
 
         // instantiate object to throw
         GameObject projectile = Instantiate(objectToThrow, attackPoint.position, cam.rotation);
+        projectile.layer = 7;
+        
 
         // get rigidbody component
         Rigidbody projectileRb = projectile.GetComponent<Rigidbody>();
