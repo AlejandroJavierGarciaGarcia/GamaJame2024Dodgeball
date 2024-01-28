@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7522945666693778784}
   - component: {fileID: 3508285390565746723}
   - component: {fileID: 5016081338811733368}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SphereToThrow
   m_TagString: Objeto
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.72, y: 3.02, z: 0}
-  m_LocalScale: {x: 0.52624, y: 0.52624, z: 0.52624}
+  m_LocalScale: {x: 0.23599759, y: 0.23599759, z: 0.23599759}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
