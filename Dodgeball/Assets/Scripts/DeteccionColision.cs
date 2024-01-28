@@ -6,6 +6,9 @@ public class DeteccionColision : MonoBehaviour
 
     public delegate void AbilityFunctions(GameObject objeto);
     private AbilityFunctions[] abilityArray;
+    
+    public AudioClip speedUpSound; // Assign the sound clip in the Inspector
+    private AudioSource audioSource;
 
     private void Start()
     {
@@ -37,11 +40,13 @@ public class DeteccionColision : MonoBehaviour
     }
 
     void speedUpAbility(GameObject objeto){
+        audioSource = GetComponent<AudioSource>();
         Debug.Log("Speedup nashee for GameObject: ");
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
             playerMovement.SpeedUp(20f);
+            audioSource.PlayOneShot(speedUpSound);
         }
     }
 }
