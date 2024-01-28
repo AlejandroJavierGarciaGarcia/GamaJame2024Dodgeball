@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
 
             Jump();
 
-            animator.SetBool("Jump", true);
+            animator.SetBool("Salte", true);
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
@@ -138,6 +138,6 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
-        animator.SetBool("Jump", false);
+        animator.SetBool("Salte", false);
     }
 }
