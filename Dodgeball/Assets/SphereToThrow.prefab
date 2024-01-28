@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7522945666693778784}
   - component: {fileID: 3508285390565746723}
   - component: {fileID: 5016081338811733368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SphereToThrow
-  m_TagString: Untagged
+  m_TagString: Objeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2805373a48a8dc8499c07dbba0ec029a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
