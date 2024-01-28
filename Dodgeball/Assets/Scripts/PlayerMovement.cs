@@ -18,8 +18,14 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public float walkSpeed;
     [HideInInspector] public float sprintSpeed;
 
+    [Header("Dash")]
+    public float dashForce;
+    public float dashCooldown;
+    bool readyToDash;
+
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode dashKey = KeyCode.LeftShift;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -41,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+        readyToDash = true;
     }
 
     private void Update()
@@ -56,11 +63,38 @@ public class PlayerMovement : MonoBehaviour
             rb.drag = groundDrag;
         else
             rb.drag = 0;
+
+
+        if (Input.GetKey(dashKey) && readyToDash)
+        {
+            readyToDash = false;
+
+            Dash();
+
+            Invoke(nameof(ResetDash), dashCooldown);
+        }
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    private void Dash()
+    {
+        Debug.Log("dashing");
+        // Apply a force for dashing
+        rb.AddForce(moveDirection.normalized * dashForce, ForceMode.Impulse);
+    }
+
+    private void ResetDash()
+    {
+        readyToDash = true;
+    }
+
+    private void ResetSpeed()
+    {
+        moveSpeed = 7f;
     }
 
     private void MyInput()
@@ -115,5 +149,13 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    public void SpeedUp(float speedMultiplier)
+    {
+        // Increase the move speed when the player collides with the "Dado" object
+        moveSpeed = speedMultiplier;
+        Invoke(nameof(ResetSpeed), 3);
+        
     }
 }
