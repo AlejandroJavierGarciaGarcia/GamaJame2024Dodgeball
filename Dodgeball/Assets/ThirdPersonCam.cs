@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class ThirdPersonCam : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class ThirdPersonCam : MonoBehaviour
     public Rigidbody rb;
 
     public float rotationSpeed;
+    public float zoomSpeed = 5f;
+    public float minZoomFOV = 30f;
+    public float maxZoomFOV = 80f;
+
+    private CinemachineFreeLook freeLookCamera;
 
     public Transform combatLookAt;
 
@@ -32,18 +38,14 @@ public class ThirdPersonCam : MonoBehaviour
         Cursor.visible = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        // switch styles
-        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchCameraStyle(CameraStyle.Basic);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchCameraStyle(CameraStyle.Combat);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchCameraStyle(CameraStyle.Topdown);
 
         // rotate orientation
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
+        //Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+        //orientation.forward = viewDir.normalized;
 
-        // roate player object
+        // rotate player object
         if(currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
             float horizontalInput = Input.GetAxis("Horizontal");

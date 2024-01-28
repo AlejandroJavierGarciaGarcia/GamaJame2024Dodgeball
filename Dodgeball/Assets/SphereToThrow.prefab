@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5016081338811733368}
   m_Layer: 0
   m_Name: SphereToThrow
-  m_TagString: Untagged
+  m_TagString: Objeto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.72, y: 3.02, z: 0}
-  m_LocalScale: {x: 0.52624, y: 0.52624, z: 0.52624}
+  m_LocalScale: {x: 0.23599759, y: 0.23599759, z: 0.23599759}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2805373a48a8dc8499c07dbba0ec029a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
